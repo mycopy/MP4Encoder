@@ -1,0 +1,8 @@
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\AVEncoderTester.exe.config
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\AVEncoderTester.exe
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\AVEncoderTester.pdb
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\AVEncoder.dll
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\AVEncoder.pdb
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\AVEncoderTester.csprojResolveAssemblyReference.cache
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\AVEncoderTester.exe
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\AVEncoderTester.pdb

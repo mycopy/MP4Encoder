@@ -1,0 +1,4 @@
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Debug\AVConverter.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Debug\AVConverter.pdb
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Debug\AVConverter.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Debug\AVConverter.pdb

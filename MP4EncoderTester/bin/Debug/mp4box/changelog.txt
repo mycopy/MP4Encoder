@@ -1,0 +1,2534 @@
+Revision: 2735
+Author: cconcolato
+Date: 17:55:20, mercredi 2 mars 2011
+Message:
+First attempt at M3U8 to MPD conversion within MP4Box
+(including fix parsing of M3U8 for bandwidth and codecs attributes)
+----
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/include/gpac/internal/m3u8.h
+Modified : /trunk/gpac/include/gpac/internal/mpd.h
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/src/media_tools/m3u8.c
+Modified : /trunk/gpac/src/media_tools/mpd.c
+
+Revision: 2734
+Author: enst_devs
+Date: 15:33:54, mercredi 2 mars 2011
+Message:
+[sillan] Adding new modification for the script gpac_build_android. Just the NDK path is needed. it does not recompile all the libgpac every time
+----
+Deleted : /trunk/gpac/build/android/gpac_build_android
+Modified : /trunk/gpac/build/android/jni/Application.mk
+Added : /trunk/gpac/build/android/jni/gpac_build_android
+Modified : /trunk/gpac/build/android/jni/libgpac/Android.mk
+
+Revision: 2733
+Author: cconcolato
+Date: 13:36:21, mercredi 2 mars 2011
+Message:
+First (partial) implementation of MPEG-2 TS indexing according to MPEG DASH (use of SIDX box)
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/src/media_tools/mpegts.c
+
+Revision: 2732
+Author: cconcolato
+Date: 13:35:21, mercredi 2 mars 2011
+Message:
+Implementation of the new SIDX box according to w11726_14496-12_3rd_DAM3_R6 (Daegu)
+Needs further fix in movie fragmentation
+----
+Modified : /trunk/gpac/include/gpac/internal/isomedia_dev.h
+Modified : /trunk/gpac/src/isomedia/box_code_base.c
+Modified : /trunk/gpac/src/isomedia/box_dump.c
+Modified : /trunk/gpac/src/isomedia/movie_fragments.c
+
+Revision: 2731
+Author: enst_devs
+Date: 13:32:21, mercredi 2 mars 2011
+Message:
+[bouqueau] merge recent vc8 modifications
+----
+Modified : /trunk/gpac/build/msvc9/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/mpd_in.vcproj
+
+Revision: 2730
+Author: cconcolato
+Date: 12:57:55, mercredi 2 mars 2011
+Message:
+Fix pre-build (generation of version.h) when the path contains spaces
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+
+Revision: 2729
+Author: bad_sheep
+Date: 12:28:42, mercredi 2 mars 2011
+Message:
+Fixed typo in error message
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2728
+Author: bad_sheep
+Date: 12:25:19, mercredi 2 mars 2011
+Message:
+Fixed GCC compilation warnings about missing parenthesis
+----
+Modified : /trunk/gpac/src/media_tools/mpd.c
+
+Revision: 2727
+Author: bad_sheep
+Date: 12:16:21, mercredi 2 mars 2011
+Message:
+Fixed error in previous merge, restored working mpd
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2726
+Author: bad_sheep
+Date: 11:47:25, mercredi 2 mars 2011
+Message:
+Avoid crash when starting MPD/MPEGTS_IN and stopping the player before anything has been downloaded + added some assert() to avoid some memory corruptions
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+Modified : /trunk/gpac/modules/aac_in/aac_in.c
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2725
+Author: cconcolato
+Date: 11:41:58, mercredi 2 mars 2011
+Message:
+moved M3U8 and MPD Header files to gpac/include/internal
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Added : /trunk/gpac/include/gpac/internal/m3u8.h (Copy from path: /trunk/gpac/src/media_tools/m3u8.h, Revision, 2723)
+Added : /trunk/gpac/include/gpac/internal/mpd.h (Copy from path: /trunk/gpac/src/media_tools/mpd.h, Revision, 2723)
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/src/media_tools/m3u8.c
+Deleted : /trunk/gpac/src/media_tools/m3u8.h
+Modified : /trunk/gpac/src/media_tools/mpd.c
+Deleted : /trunk/gpac/src/media_tools/mpd.h
+
+Revision: 2724
+Author: cconcolato
+Date: 11:14:45, mercredi 2 mars 2011
+Message:
+fix .h path after m3u8 and mpd code move
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2723
+Author: cconcolato
+Date: 11:10:03, mercredi 2 mars 2011
+Message:
+Moving code for m3u8 and mpd into libgpac for use by MP4Box
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc8/mpd_in.vcproj
+Modified : /trunk/gpac/modules/mpd_in/Makefile
+Deleted : /trunk/gpac/modules/mpd_in/m3u8.c
+Deleted : /trunk/gpac/modules/mpd_in/m3u8.h
+Deleted : /trunk/gpac/modules/mpd_in/mpd.c
+Deleted : /trunk/gpac/modules/mpd_in/mpd.h
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/src/Makefile
+Modified : /trunk/gpac/src/export.cpp
+Added : /trunk/gpac/src/media_tools/m3u8.c (Copy from path: /trunk/gpac/modules/mpd_in/m3u8.c, Revision, 2722)
+Added : /trunk/gpac/src/media_tools/m3u8.h (Copy from path: /trunk/gpac/modules/mpd_in/m3u8.h, Revision, 2722)
+Added : /trunk/gpac/src/media_tools/mpd.c (Copy from path: /trunk/gpac/modules/mpd_in/mpd.c, Revision, 2722)
+Added : /trunk/gpac/src/media_tools/mpd.h (Copy from path: /trunk/gpac/modules/mpd_in/mpd.h, Revision, 2722)
+
+Revision: 2722
+Author: cconcolato
+Date: 10:41:34, mercredi 2 mars 2011
+Message:
+adding TODO to update the MPD structure according to latest standard document
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd.h
+
+Revision: 2721
+Author: cconcolato
+Date: 18:00:32, mardi 1 mars 2011
+Message:
+Fix for version.h generation
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/libgpac.vcproj
+Added : /trunk/gpac/version.bat
+
+Revision: 2720
+Author: enst_devs
+Date: 17:26:32, mardi 1 mars 2011
+Message:
+[bouqueau] align ffmpeg headers on rev18966 used for automatic builds
+----
+Modified : /trunk/gpac/extra_lib/include/libavcodec/avcodec.h
+Modified : /trunk/gpac/extra_lib/include/libavformat/avformat.h
+Modified : /trunk/gpac/extra_lib/include/libavformat/avio.h
+Modified : /trunk/gpac/extra_lib/include/libavutil/common.h
+
+Revision: 2719
+Author: jeanlf
+Date: 15:09:55, mardi 1 mars 2011
+Message:
+Removed libjs dependency from MP4Box (dep is in libgpac)
+----
+Modified : /trunk/gpac/applications/mp4box/Makefile
+
+Revision: 2718
+Author: jeanlf
+Date: 15:09:19, mardi 1 mars 2011
+Message:
+Removed libjs dependency from MP4Box (dep is in libgpac)
+----
+Modified : /trunk/gpac/applications/mp4client/Makefile
+
+Revision: 2717
+Author: jeanlf
+Date: 11:33:18, mardi 1 mars 2011
+Message:
+Fixed deadlock in cache
+----
+Modified : /trunk/gpac/src/utils/cache.c
+
+Revision: 2716
+Author: bad_sheep
+Date: 17:34:42, lundi 28 février 2011
+Message:
+Fixed memory leaks + disabled ffmpeg for JPEG images since it has issues (black stride on the right side of picture with some pictures)
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2715
+Author: bad_sheep
+Date: 14:01:20, lundi 28 février 2011
+Message:
+Fixed many memory leaks into MPD, now valgrind does not report any leak into MPD
+----
+Modified : /trunk/gpac/modules/mpd_in/m3u8.c
+Modified : /trunk/gpac/modules/mpd_in/mpd.c
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2714
+Author: bad_sheep
+Date: 14:04:50, dimanche 27 février 2011
+Message:
+Fixed memory leak reported by valgrind in MPD
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2713
+Author: bad_sheep
+Date: 14:04:00, dimanche 27 février 2011
+Message:
+FFMPEG was reading data outside allocated memory since ffmpeg MAY read dataLength + FF_INPUT_BUFFER_PADDING_SIZE, fixed other areas where it happens too. Now valgrind does not report any read outside allocated memory
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2712
+Author: bad_sheep
+Date: 14:48:48, samedi 26 février 2011
+Message:
+Added insert, use 1024 as max size for URLs (a common MAX size for servers)
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_demux.c
+
+Revision: 2711
+Author: bad_sheep
+Date: 14:14:46, samedi 26 février 2011
+Message:
+Fixed compilation warnings
+----
+Modified : /trunk/gpac/modules/gpac_js/gpac_js.c
+Modified : /trunk/gpac/modules/widgetman/wgt_load.c
+
+Revision: 2710
+Author: bad_sheep
+Date: 13:00:54, samedi 26 février 2011
+Message:
+Removed GCC compilation warning : symbol main is reserved (renamed it nmain) + removed unused variable u32 meta
+----
+Modified : /trunk/gpac/modules/widgetman/widgetman.c
+
+Revision: 2709
+Author: bad_sheep
+Date: 12:55:20, samedi 26 février 2011
+Message:
+Removed compilation warnings : unused variable GF_WidgetInstance *wid and avoid creating double objet to cast it into JSInt value
+----
+Modified : /trunk/gpac/modules/widgetman/widget.c
+
+Revision: 2708
+Author: bad_sheep
+Date: 12:53:26, samedi 26 février 2011
+Message:
+Removed unused function to avoid compilation warning
+----
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+
+Revision: 2707
+Author: bad_sheep
+Date: 12:50:40, samedi 26 février 2011
+Message:
+Be sure to initialize memory properly for sub allocated structures (init to NULL to ease debug) + avoid to read freed memory (AU->CTS was already freed in droped au unit)
+----
+Modified : /trunk/gpac/src/terminal/decoder.c
+Modified : /trunk/gpac/src/terminal/media_memory.c
+
+Revision: 2706
+Author: bad_sheep
+Date: 12:34:39, samedi 26 février 2011
+Message:
+Don't know if we have to abort, but at least write an error message when read size if not the one expected
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+
+Revision: 2705
+Author: bad_sheep
+Date: 12:16:31, samedi 26 février 2011
+Message:
+FFMPEG was reading data outside allocated memory since ffmpeg MAY read dataLength + FF_INPUT_BUFFER_PADDING_SIZE. Also fixed algorith that was reading outside allocated space, please chez if new impl is correct (added FIXME)
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2704
+Author: enst_devs
+Date: 10:36:57, vendredi 25 février 2011
+Message:
+[sillan] adding an u32 table_id field in EIT Structure
+----
+Modified : /trunk/gpac/include/gpac/mpegts.h
+
+Revision: 2703
+Author: bad_sheep
+Date: 16:59:44, jeudi 24 février 2011
+Message:
+Fixed multiple memory leaks and added some assert() to detect leaks
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd.c
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2702
+Author: jeanlf
+Date: 14:03:02, jeudi 24 février 2011
+Message:
+Fixed bugs in segment dir and manifest writing
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2701
+Author: enst_devs
+Date: 13:13:50, jeudi 24 février 2011
+Message:
+[sillan] Add error messages for missing parameters.
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2700
+Author: jeanlf
+Date: 10:35:52, jeudi 24 février 2011
+Message:
+Fixed bug in MPD/M3U8 refresh
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2699
+Author: enst_devs
+Date: 17:21:40, mardi 22 février 2011
+Message:
+[sillan] Fixed the problem with the peer_name "localhost" on linux
+----
+Modified : /trunk/gpac/src/utils/os_net.c
+
+Revision: 2698
+Author: bad_sheep
+Date: 19:28:59, lundi 21 février 2011
+Message:
+FFMPEG with USE_AVCODEC2 was not decoding properly audio packets
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2697
+Author: enst_devs
+Date: 16:58:42, lundi 21 février 2011
+Message:
+[bouqueau] use %PROGRAMFILES% to locate NSIS
+----
+Modified : /trunk/gpac/generate_installer.bat
+
+Revision: 2696
+Author: bad_sheep
+Date: 12:16:10, lundi 21 février 2011
+Message:
+Avoid crash when using a 404 URL
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2695
+Author: bad_sheep
+Date: 11:43:18, lundi 21 février 2011
+Message:
+Fixed GPAC compilation under Linux when using spidermonkey
+----
+Modified : /trunk/gpac/applications/mp42ts/Makefile
+Modified : /trunk/gpac/applications/mp4box/Makefile
+Modified : /trunk/gpac/applications/mp4client/Makefile
+Modified : /trunk/gpac/applications/osmo4_wx/Makefile
+Modified : /trunk/gpac/src/Makefile
+
+Revision: 2694
+Author: enst_devs
+Date: 10:29:08, lundi 21 février 2011
+Message:
+[bouqueau] platinum vc9 missing dir
+----
+Modified : /trunk/gpac/build/msvc9/platinum.vcproj
+
+Revision: 2693
+Author: enst_devs
+Date: 10:19:37, lundi 21 février 2011
+Message:
+[bouqueau] SDL behaves like other extra_libs for includes and libs (2)
+----
+Modified : /trunk/gpac/build/msvc8/sdl_out.vcproj
+Modified : /trunk/gpac/build/msvc9/sdl_out.vcproj
+
+Revision: 2692
+Author: enst_devs
+Date: 10:12:24, lundi 21 février 2011
+Message:
+[bouqueau] SDL behaves like other extra_libs for includes and libs
+----
+Modified : /trunk/gpac/build/msvc8/sdl_out.vcproj
+Modified : /trunk/gpac/build/msvc9/sdl_out.vcproj
+
+Revision: 2691
+Author: enst_devs
+Date: 09:56:09, lundi 21 février 2011
+Message:
+[bouqueau] fix build
+----
+Modified : /trunk/gpac/src/export.cpp
+
+Revision: 2690
+Author: bad_sheep
+Date: 19:18:12, vendredi 18 février 2011
+Message:
+Fixed possible leaking writePointer in cache entries, should fix UPnp bug
+----
+Modified : /trunk/gpac/src/utils/cache.c
+
+Revision: 2689
+Author: bad_sheep
+Date: 18:38:09, vendredi 18 février 2011
+Message:
+Fixed wrong previous commit, should fix gf_cache_entry_dup_readonly... sorry
+----
+Modified : /trunk/gpac/include/gpac/cache.h
+Modified : /trunk/gpac/src/terminal/network_service.c
+Modified : /trunk/gpac/src/utils/cache.c
+
+Revision: 2688
+Author: bad_sheep
+Date: 18:13:45, vendredi 18 février 2011
+Message:
+Fixed possible corruption when using gf_dm_cache_entry_dup_readonly(sess) since duplicate entries where not garbage collected
+----
+Modified : /trunk/gpac/include/gpac/download.h
+Modified : /trunk/gpac/modules/mpd_in/m3u8.c
+Modified : /trunk/gpac/src/terminal/network_service.c
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2687
+Author: bad_sheep
+Date: 16:51:01, vendredi 18 février 2011
+Message:
+Removed compilation warning due to unused size variable on non-apple plateforms
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2686
+Author: enst_devs
+Date: 15:01:05, vendredi 18 février 2011
+Message:
+[bouqueau] SDL include files are expected to be here
+----
+Added : /trunk/gpac/extra_lib/include/SDL
+
+Revision: 2685
+Author: enst_devs
+Date: 11:40:17, vendredi 18 février 2011
+Message:
+[bouqueau] platinum now compiles like any other module
+/!\ this commit may break all your current builds as includes and libs directories have moved /!\
+----
+Modified : /trunk/gpac/build/msvc8/platinum.vcproj
+Modified : /trunk/gpac/build/msvc9/platinum.vcproj
+Added : /trunk/gpac/extra_lib/include/platinum (Copy from path: /trunk/gpac/modules/platinum/SDK/include, Revision, 2684)
+Modified : /trunk/gpac/modules/platinum/Makefile
+Deleted : /trunk/gpac/modules/platinum/SDK
+
+Revision: 2684
+Author: jeanlf
+Date: 16:04:29, jeudi 17 février 2011
+Message:
+fixed palette PNG support with new libpng API
+----
+Modified : /trunk/gpac/src/media_tools/img.c
+
+Revision: 2683
+Author: enst_devs
+Date: 15:20:09, jeudi 17 février 2011
+Message:
+[bouqueau] remove failing post-events
+----
+Modified : /trunk/gpac/build/msvc8/GPAX.vcproj
+Modified : /trunk/gpac/build/msvc9/GPAX.vcproj
+
+Revision: 2682
+Author: jeanlf
+Date: 14:49:48, jeudi 17 février 2011
+Message:
+cleaner version of PNG logo
+----
+Modified : /trunk/gpac/regression_tests/auxiliary_files/logo.png
+
+Revision: 2681
+Author: jeanlf
+Date: 10:07:22, jeudi 17 février 2011
+Message:
+Added RGB and RGBA side-by-side pixel formats
+----
+Modified : /trunk/gpac/include/gpac/constants.h
+Modified : /trunk/gpac/modules/dx_hw/copy_pixels.c
+Modified : /trunk/gpac/modules/img_in/img_in.c
+Modified : /trunk/gpac/modules/img_in/png_dec.c
+Modified : /trunk/gpac/src/compositor/compositor_2d.c
+Modified : /trunk/gpac/src/utils/color.c
+
+Revision: 2680
+Author: jeanlf
+Date: 19:10:42, mardi 15 février 2011
+Message:
+Fixed usage of /usr/lib64 for NetBSD
+----
+Modified : /trunk/gpac/configure
+
+Revision: 2679
+Author: jeanlf
+Date: 17:21:26, mardi 15 février 2011
+Message:
+Fixed erase background message
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_hw.h
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+
+Revision: 2678
+Author: enst_devs
+Date: 11:42:58, mardi 15 février 2011
+Message:
+[bouqueau] fix post_compilation event
+----
+Modified : /trunk/gpac/build/msvc9/mp4box.vcproj
+
+Revision: 2677
+Author: enst_devs
+Date: 11:42:00, mardi 15 février 2011
+Message:
+[bouqueau] fix post_compilation event
+----
+Modified : /trunk/gpac/build/msvc9/mp4box.vcproj
+
+Revision: 2676
+Author: enst_devs
+Date: 10:22:37, mardi 15 février 2011
+Message:
+[bouqueau] Avoid updating version.h at each build on msvc (2)
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/libgpac.vcproj
+
+Revision: 2675
+Author: jeanlf
+Date: 10:09:21, mardi 15 février 2011
+Message:
+Fixed compilation with libpng>=1.5
+----
+Modified : /trunk/gpac/src/media_tools/img.c
+
+Revision: 2674
+Author: bad_sheep
+Date: 17:59:48, lundi 14 février 2011
+Message:
+Updated pulseaudio behavior to avoid consuming too much CPU when audio is not available
+----
+Modified : /trunk/gpac/modules/pulseaudio/pulseaudio.c
+
+Revision: 2673
+Author: enst_devs
+Date: 17:53:43, lundi 14 février 2011
+Message:
+[bouqueau] NSIS installer with revision number. The new generate_installer.bat batch won't succeed if you have local modifications. You can still generate an installer using the old way for experimental builds.
+----
+Added : /trunk/gpac/bin/win32/release/nsis_install/default.out
+Modified : /trunk/gpac/bin/win32/release/nsis_install/gpac_installer.nsi
+Added : /trunk/gpac/bin/win32/release/nsis_install/readme.txt
+Added : /trunk/gpac/generate_installer.bat
+
+Revision: 2672
+Author: jeanlf
+Date: 17:20:46, lundi 14 février 2011
+Message:
+Fixed GUI launching
+----
+Modified : /trunk/gpac/gui/gui.js
+
+Revision: 2671
+Author: jeanlf
+Date: 16:23:13, lundi 14 février 2011
+Message:
+Patched message loop
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+
+Revision: 2670
+Author: jeanlf
+Date: 16:22:50, lundi 14 février 2011
+Message:
+Avoid updating version.h at each build on msvc
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+
+Revision: 2669
+Author: jeanlf
+Date: 16:21:48, lundi 14 février 2011
+Message:
+Added version number in WinCE installer
+----
+Modified : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/do.bat
+
+Revision: 2668
+Author: jeanlf
+Date: 14:46:48, lundi 14 février 2011
+Message:
+Added version number in installer
+----
+Modified : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/do.bat
+Modified : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/gpac.inf
+Deleted : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/gpac.ini
+
+Revision: 2667
+Author: jeanlf
+Date: 18:47:00, vendredi 11 février 2011
+Message:
+Added Smartphone2003 installer
+----
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/debug
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/do.bat
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/gpac.inf
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/gpac.ini
+Added : /trunk/gpac/bin/smartphone 2003 (armv4)/release/install/readme.txt
+
+Revision: 2666
+Author: jeanlf
+Date: 18:33:54, vendredi 11 février 2011
+Message:
+Added NSIS installer
+----
+Added : /trunk/gpac/bin/win32
+Added : /trunk/gpac/bin/win32/debug
+Added : /trunk/gpac/bin/win32/release
+Added : /trunk/gpac/bin/win32/release/nsis_install
+Added : /trunk/gpac/bin/win32/release/nsis_install/gpac_installer.nsi
+
+Revision: 2665
+Author: jeanlf
+Date: 18:09:41, vendredi 11 février 2011
+Message:
+Added license agreement to OSX DMG
+----
+Added : /trunk/gpac/build/osxdmg/SLA.r
+Modified : /trunk/gpac/configure
+Modified : /trunk/gpac/include/gpac/setup.h
+Modified : /trunk/gpac/mkdmg.sh
+
+Revision: 2664
+Author: enst_devs
+Date: 11:54:37, vendredi 11 février 2011
+Message:
+[bouqueau] add expected lib folders for platinum (UPnP)
+----
+Added : /trunk/gpac/modules/platinum/SDK/lib_arm
+Added : /trunk/gpac/modules/platinum/SDK/lib_gcc_x86
+Added : /trunk/gpac/modules/platinum/SDK/lib_vc8
+
+Revision: 2663
+Author: enst_devs
+Date: 17:56:53, jeudi 10 février 2011
+Message:
+[bouqueau] GPAC won't compile if the 'svnversion' command (shipped with every Subversion package) is not in your path
+----
+Modified : /trunk/gpac/INSTALLME
+
+Revision: 2662
+Author: enst_devs
+Date: 13:22:56, jeudi 10 février 2011
+Message:
+[sillan] remove useless directory
+----
+Deleted : /trunk/gpac/applications/osmo4_android/bin
+
+Revision: 2661
+Author: enst_devs
+Date: 10:27:19, jeudi 10 février 2011
+Message:
+[sillan] Mise à jour pour GPAC Android
+----
+Added : /trunk/gpac/applications/osmo4_android
+Added : /trunk/gpac/applications/osmo4_android/.classpath
+Added : /trunk/gpac/applications/osmo4_android/.project
+Added : /trunk/gpac/applications/osmo4_android/.settings
+Added : /trunk/gpac/applications/osmo4_android/.settings/de.loskutov.anyedit.AnyEditTools.prefs
+Added : /trunk/gpac/applications/osmo4_android/AndroidManifest.xml
+Added : /trunk/gpac/applications/osmo4_android/assets
+Added : /trunk/gpac/applications/osmo4_android/bin
+Added : /trunk/gpac/applications/osmo4_android/build.xml
+Added : /trunk/gpac/applications/osmo4_android/default.properties
+Added : /trunk/gpac/applications/osmo4_android/gen
+Added : /trunk/gpac/applications/osmo4_android/gen/com
+Added : /trunk/gpac/applications/osmo4_android/gen/com/artemis
+Added : /trunk/gpac/applications/osmo4_android/gen/com/artemis/Osmo4
+Added : /trunk/gpac/applications/osmo4_android/gen/com/artemis/Osmo4/R.java
+Added : /trunk/gpac/applications/osmo4_android/jni
+Added : /trunk/gpac/applications/osmo4_android/jni/Android.mk
+Added : /trunk/gpac/applications/osmo4_android/jni/wrapper-bitmap-20-09-2010.cpp
+Added : /trunk/gpac/applications/osmo4_android/jni/wrapper-bitmap-20-09-2010.h
+Added : /trunk/gpac/applications/osmo4_android/jni/wrapper.cpp
+Added : /trunk/gpac/applications/osmo4_android/jni/wrapper.h
+Added : /trunk/gpac/applications/osmo4_android/libs
+Added : /trunk/gpac/applications/osmo4_android/libs/armeabi
+Added : /trunk/gpac/applications/osmo4_android/libs/armeabi/gdb.setup
+Added : /trunk/gpac/applications/osmo4_android/libs/armeabi/gdbserver
+Added : /trunk/gpac/applications/osmo4_android/local.properties
+Added : /trunk/gpac/applications/osmo4_android/proguard.cfg
+Added : /trunk/gpac/applications/osmo4_android/res
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-hdpi
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-hdpi/icon.png
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-ldpi
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-ldpi/icon.png
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-mdpi
+Added : /trunk/gpac/applications/osmo4_android/res/drawable-mdpi/icon.png
+Added : /trunk/gpac/applications/osmo4_android/res/layout
+Added : /trunk/gpac/applications/osmo4_android/res/layout/main.xml
+Added : /trunk/gpac/applications/osmo4_android/res/menu
+Added : /trunk/gpac/applications/osmo4_android/res/menu/main_menu.xml
+Added : /trunk/gpac/applications/osmo4_android/res/raw
+Added : /trunk/gpac/applications/osmo4_android/res/values
+Added : /trunk/gpac/applications/osmo4_android/res/values/strings.xml
+Added : /trunk/gpac/applications/osmo4_android/src
+Added : /trunk/gpac/applications/osmo4_android/src/com
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4/BitmapView.java
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4/GpacObject.java
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4/Osmo4.java
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4/Osmo4GLSurfaceView.java
+Added : /trunk/gpac/applications/osmo4_android/src/com/artemis/Osmo4/Osmo4Renderer.java
+Added : /trunk/gpac/build/android
+Added : /trunk/gpac/build/android/AndroidManifest.xml
+Added : /trunk/gpac/build/android/assets
+Added : /trunk/gpac/build/android/bin
+Added : /trunk/gpac/build/android/default.properties
+Added : /trunk/gpac/build/android/gen
+Added : /trunk/gpac/build/android/gen/com
+Added : /trunk/gpac/build/android/gen/com/artemis
+Added : /trunk/gpac/build/android/gen/com/artemis/gpac
+Added : /trunk/gpac/build/android/gen/com/artemis/gpac/R.java
+Added : /trunk/gpac/build/android/gpac_build_android
+Added : /trunk/gpac/build/android/jni
+Added : /trunk/gpac/build/android/jni/Android.mk
+Added : /trunk/gpac/build/android/jni/Application.mk
+Added : /trunk/gpac/build/android/jni/libgpac
+Added : /trunk/gpac/build/android/jni/libgpac/Android.mk
+Added : /trunk/gpac/build/android/jni/libgpac/config.h
+Added : /trunk/gpac/build/android/jni/modules
+Added : /trunk/gpac/build/android/jni/modules/Android.mk
+Added : /trunk/gpac/build/android/jni/modules/base.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_aac_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_bifs_dec.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_ctx_load.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_droid_audio.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_droid_out.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_dummy_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_ffmpeg_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_ft_font.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_gpac_js.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_img_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_ismacryp.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_isom_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_laser_dec.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_mp3_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_mpd_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_mpegts_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_odf_dec.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_rawout.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_rtp_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_saf_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_soft_raster.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_svg_in.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_timedtext.mk
+Added : /trunk/gpac/build/android/jni/modules/gm_widgetman.mk
+Added : /trunk/gpac/build/android/libs
+Added : /trunk/gpac/build/android/libs/armeabi
+Added : /trunk/gpac/build/android/rename_file
+Added : /trunk/gpac/build/android/res
+Added : /trunk/gpac/build/android/res/drawable-hdpi
+Added : /trunk/gpac/build/android/res/drawable-hdpi/icon.png
+Added : /trunk/gpac/build/android/res/drawable-ldpi
+Added : /trunk/gpac/build/android/res/drawable-ldpi/icon.png
+Added : /trunk/gpac/build/android/res/drawable-mdpi
+Added : /trunk/gpac/build/android/res/drawable-mdpi/icon.png
+Added : /trunk/gpac/build/android/res/layout
+Added : /trunk/gpac/build/android/res/layout/main.xml
+Added : /trunk/gpac/build/android/res/values
+Added : /trunk/gpac/build/android/res/values/strings.xml
+Added : /trunk/gpac/build/android/src
+Added : /trunk/gpac/build/android/src/com
+Added : /trunk/gpac/build/android/src/com/artemis
+Added : /trunk/gpac/build/android/src/com/artemis/gpac
+Added : /trunk/gpac/build/android/src/com/artemis/gpac/gpac.java
+Added : /trunk/gpac/extra_lib/lib/android
+Added : /trunk/gpac/extra_lib/lib/android/libeditline.so
+Added : /trunk/gpac/extra_lib/lib/android/libfaad.so
+Added : /trunk/gpac/extra_lib/lib/android/libfaad_static.a
+Added : /trunk/gpac/extra_lib/lib/android/libffmpeg.so
+Added : /trunk/gpac/extra_lib/lib/android/libft2.so
+Added : /trunk/gpac/extra_lib/lib/android/libjpeg.so
+Added : /trunk/gpac/extra_lib/lib/android/libjs_osmo.so
+Added : /trunk/gpac/extra_lib/lib/android/libmad.so
+Added : /trunk/gpac/extra_lib/lib/android/libopenjpeg.so
+Added : /trunk/gpac/extra_lib/lib/android/libpng.so
+Added : /trunk/gpac/extra_lib/lib/android/libz.so
+Modified : /trunk/gpac/modules/aac_in/aac_in.c
+Modified : /trunk/gpac/modules/aac_in/faad_dec.c
+Added : /trunk/gpac/modules/droid_audio
+Added : /trunk/gpac/modules/droid_audio/droidaudio.c
+Added : /trunk/gpac/modules/droid_audio/javaenv.c
+Added : /trunk/gpac/modules/droid_audio/javaenv.h
+Added : /trunk/gpac/modules/droid_out
+Added : /trunk/gpac/modules/droid_out/droid_vout-bitmap.c
+Added : /trunk/gpac/modules/droid_out/droid_vout.c
+Modified : /trunk/gpac/src/compositor/gl_inc.h
+Modified : /trunk/gpac/src/compositor/visual_manager_3d_gl.c
+Modified : /trunk/gpac/src/scenegraph/base_scenegraph.c
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+Modified : /trunk/gpac/src/scenegraph/svg_smjs.c
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+Modified : /trunk/gpac/src/utils/color.c
+Modified : /trunk/gpac/src/utils/os_divers.c
+Modified : /trunk/gpac/src/utils/os_thread.c
+
+Revision: 2660
+Author: enst_devs
+Date: 14:34:05, mercredi 9 février 2011
+Message:
+[bouqueau] fix compilation
+----
+Modified : /trunk/gpac/modules/opensvc_dec/opensvc_dec.c
+
+Revision: 2659
+Author: enst_devs
+Date: 14:31:11, mercredi 9 février 2011
+Message:
+[bouqueau] fix build with new version.h pre-compile generation
+
+/!\ the 'svnversion' command from subversion must be accessible in your path to compile gapc /!\
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/libgpac.vcproj
+
+Revision: 2658
+Author: enst_devs
+Date: 14:29:42, mercredi 9 février 2011
+Message:
+[bouqueau] version.h cannot be commited
+----
+Modified : /trunk/gpac/include/gpac
+
+Revision: 2657
+Author: jeanlf
+Date: 10:55:30, mercredi 9 février 2011
+Message:
+cleanup osx app package
+----
+Modified : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Info.plist
+Deleted : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/lib
+
+Revision: 2656
+Author: jeanlf
+Date: 10:51:11, mercredi 9 février 2011
+Message:
+added new icons for file types
+----
+Deleted : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/Osmo4.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_audio.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_generic.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_model.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_subs.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_video.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/osmo_widget.icns
+
+Revision: 2655
+Author: jeanlf
+Date: 18:36:49, mardi 8 février 2011
+Message:
+Added DMG package for OSX
+----
+Added : /trunk/gpac/build/osxdmg
+Added : /trunk/gpac/build/osxdmg/Osmo4.app
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Info.plist
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/MacOS
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/MacOS/lib
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/MacOS/modules
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/PkgInfo
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/English.lproj
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/Resources/Osmo4.icns
+Added : /trunk/gpac/build/osxdmg/Osmo4.app/Contents/lib
+
+Revision: 2654
+Author: jeanlf
+Date: 18:32:22, mardi 8 février 2011
+Message:
+Added SVN revision in GPAC version and OSX DMG generation
+----
+Modified : /trunk/gpac/Makefile
+Modified : /trunk/gpac/applications/mp4client/Makefile
+Modified : /trunk/gpac/applications/mp4client/main.c
+Modified : /trunk/gpac/configure
+Modified : /trunk/gpac/gui/extensions/widget_manager/init.js
+Modified : /trunk/gpac/gui/gui.js
+Added : /trunk/gpac/mkdmg.sh
+Modified : /trunk/gpac/modules/platinum/Makefile
+Modified : /trunk/gpac/modules/sdl_out/video.c
+Modified : /trunk/gpac/src/Makefile
+Modified : /trunk/gpac/src/utils/module.c
+
+Revision: 2653
+Author: jeanlf
+Date: 17:33:04, mardi 8 février 2011
+Message:
+Added SVN revision in GPAC version
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/include/gpac/tools.h
+
+Revision: 2652
+Author: cconcolato
+Date: 17:42:25, vendredi 4 février 2011
+Message:
+adding Time Stamp logging
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/include/gpac/mpegts.h
+Modified : /trunk/gpac/src/media_tools/mpegts.c
+
+Revision: 2651
+Author: jeanlf
+Date: 16:11:13, vendredi 4 février 2011
+Message:
+Misc bug fixes in configure (xvidcore) and gui/x11 bugs under linux
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+Modified : /trunk/gpac/configure
+Modified : /trunk/gpac/gui/gui.js
+Modified : /trunk/gpac/modules/x11_out/x11_out.c
+Modified : /trunk/gpac/modules/x11_out/x11_out.h
+Modified : /trunk/gpac/modules/xvid_dec/Makefile
+
+Revision: 2650
+Author: enst_devs
+Date: 15:24:40, vendredi 4 février 2011
+Message:
+[bouqueau] remove pending resize notifications when one has just been treated
+----
+Modified : /trunk/gpac/src/compositor/compositor.c
+
+Revision: 2649
+Author: jeanlf
+Date: 18:41:42, jeudi 3 février 2011
+Message:
+More improvements on SVC import
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/include/gpac/avparse.h
+Modified : /trunk/gpac/include/gpac/internal/media_dev.h
+Modified : /trunk/gpac/src/media_tools/av_parsers.c
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2648
+Author: jeanlf
+Date: 15:55:23, jeudi 3 février 2011
+Message:
+Fixed bug with cache entry
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2647
+Author: jeanlf
+Date: 15:54:53, jeudi 3 février 2011
+Message:
+Fixed potential crash upun disconnect
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2646
+Author: jeanlf
+Date: 15:15:20, jeudi 3 février 2011
+Message:
+Fixed regressions due to sscanf bug on win32
+----
+Modified : /trunk/gpac/src/ietf/rtsp_common.c
+Modified : /trunk/gpac/src/scenegraph/svg_attributes.c
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2645
+Author: jeanlf
+Date: 12:07:53, jeudi 3 février 2011
+Message:
+Fixed vpath for Makefile
+----
+Modified : /trunk/gpac/applications/mp42ts/Makefile
+
+Revision: 2644
+Author: jeanlf
+Date: 15:58:14, mercredi 2 février 2011
+Message:
+Fixed bug in navigation mode selection
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2643
+Author: jeanlf
+Date: 14:50:40, mercredi 2 février 2011
+Message:
+Fixed import of NALU prefix in SVC bitstreams
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2642
+Author: jeanlf
+Date: 10:46:27, mercredi 2 février 2011
+Message:
+Fixed ISO track import bug
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2641
+Author: cconcolato
+Date: 17:56:49, mardi 1 février 2011
+Message:
+Adding warning message for use of BIFS PMF
+----
+Modified : /trunk/gpac/src/bifs/field_decode.c
+
+Revision: 2640
+Author: cconcolato
+Date: 17:56:19, mardi 1 février 2011
+Message:
+attaching scene to compositor only if BIFS decoding went well
+----
+Modified : /trunk/gpac/modules/bifs_dec/bifs_dec.c
+
+Revision: 2639
+Author: cconcolato
+Date: 17:09:23, mardi 1 février 2011
+Message:
+DMB extensions (fix)
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+
+Revision: 2638
+Author: cconcolato
+Date: 17:08:22, mardi 1 février 2011
+Message:
+DMB extension files
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+
+Revision: 2637
+Author: cconcolato
+Date: 17:07:02, mardi 1 février 2011
+Message:
+Adding a new possible extension for MPEG-2 TS streams for DMB streams (.dmb)
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+
+Revision: 2636
+Author: jeanlf
+Date: 11:08:59, mardi 1 février 2011
+Message:
+Fixed bug when multi-channel audio configuration fails
+----
+Modified : /trunk/gpac/src/compositor/audio_render.c
+
+Revision: 2635
+Author: enst_devs
+Date: 09:16:56, mardi 1 février 2011
+Message:
+[bouqueau] more robust when trying to extract (uncompliant) adts aac from mp4
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/src/media_tools/media_export.c
+
+Revision: 2634
+Author: jeanlf
+Date: 13:21:54, lundi 31 janvier 2011
+Message:
+made -force-cat less strict and ore verbose, and added number of SPS/PPS for -info
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/applications/mp4box/fileimport.c
+
+Revision: 2633
+Author: jeanlf
+Date: 13:21:10, lundi 31 janvier 2011
+Message:
+Added error when no SPS/PPS are found in the .264 bitstream
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2632
+Author: enst_devs
+Date: 11:52:13, lundi 31 janvier 2011
+Message:
+[dufourd] typo fix to the invoke mechanism
+----
+Modified : /trunk/gpac/gui/mpegu-core.js
+
+Revision: 2631
+Author: bad_sheep
+Date: 17:57:32, vendredi 28 janvier 2011
+Message:
+Be sure to always initialize sampDTS before comparing, avoid compilation warning
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2630
+Author: bad_sheep
+Date: 16:14:00, vendredi 28 janvier 2011
+Message:
+Added missing include for PNG
+----
+Modified : /trunk/gpac/applications/mp4client/extract.c
+
+Revision: 2629
+Author: bad_sheep
+Date: 16:05:30, vendredi 28 janvier 2011
+Message:
+Removed unused variable
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2628
+Author: enst_devs
+Date: 10:17:45, vendredi 28 janvier 2011
+Message:
+[bouqueau] ptr was assigned after being freed
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2627
+Author: enst_devs
+Date: 13:38:56, jeudi 27 janvier 2011
+Message:
+[bouqueau] fix import memory leaks
+----
+Modified : /trunk/gpac/src/media_tools/av_parsers.c
+
+Revision: 2626
+Author: enst_devs
+Date: 15:51:22, mercredi 26 janvier 2011
+Message:
+[bouqueau] dependancies were broken for parallel build with make
+----
+Modified : /trunk/gpac/Makefile
+
+Revision: 2625
+Author: enst_devs
+Date: 13:51:46, mercredi 26 janvier 2011
+Message:
+[bouqueau] fix inconsistent arg parsing for "-mpeg4"
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2624
+Author: enst_devs
+Date: 13:26:43, mercredi 26 janvier 2011
+Message:
+[bouqueau] wrong indentation was causing parse errors
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2623
+Author: jeanlf
+Date: 08:00:23, mercredi 26 janvier 2011
+Message:
+Fixed crash in SIDX and added correct bandwidth compute
+----
+Modified : /trunk/gpac/src/isomedia/movie_fragments.c
+Modified : /trunk/gpac/src/media_tools/isom_tools.c
+
+Revision: 2622
+Author: jeanlf
+Date: 07:09:11, mercredi 26 janvier 2011
+Message:
+More DASH fixes and improvements (URL range, URLTemplates)
+----
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/include/gpac/isomedia.h
+Modified : /trunk/gpac/include/gpac/media_tools.h
+Modified : /trunk/gpac/src/export.cpp
+Modified : /trunk/gpac/src/isomedia/isom_read.c
+Modified : /trunk/gpac/src/media_tools/isom_tools.c
+
+Revision: 2621
+Author: enst_devs
+Date: 15:32:57, mardi 25 janvier 2011
+Message:
+[bouqueau] fix unix build
+----
+Modified : /trunk/gpac/include/gpac/media_tools.h
+
+Revision: 2620
+Author: enst_devs
+Date: 14:27:09, mardi 25 janvier 2011
+Message:
+[bouqueau] fix overflows in DTS computation
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2619
+Author: jeanlf
+Date: 12:30:44, mardi 25 janvier 2011
+Message:
+Fixed bugs in media import and export
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/src/media_tools/media_export.c
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2618
+Author: jeanlf
+Date: 12:27:05, mardi 25 janvier 2011
+Message:
+Fixed DASH bugs (spliter and reader)
+----
+Modified : /trunk/gpac/applications/mp4box/main.c
+Modified : /trunk/gpac/src/isomedia/box_code_base.c
+Modified : /trunk/gpac/src/isomedia/isom_intern.c
+Modified : /trunk/gpac/src/isomedia/movie_fragments.c
+Modified : /trunk/gpac/src/isomedia/stbl_write.c
+Modified : /trunk/gpac/src/isomedia/track.c
+Modified : /trunk/gpac/src/media_tools/isom_tools.c
+
+Revision: 2617
+Author: enst_devs
+Date: 17:53:49, lundi 24 janvier 2011
+Message:
+[dufourd] typos in a variable name
+----
+Modified : /trunk/gpac/gui/mpegu-core.js
+
+Revision: 2616
+Author: jeanlf
+Date: 06:45:57, lundi 24 janvier 2011
+Message:
+Fixed resize bug with OpenGL
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+Modified : /trunk/gpac/src/compositor/compositor.c
+
+Revision: 2615
+Author: jeanlf
+Date: 06:24:31, lundi 24 janvier 2011
+Message:
+pixel format decided based on init_flags
+----
+Modified : /trunk/gpac/modules/raw_out/raw_video.c
+
+Revision: 2614
+Author: jeanlf
+Date: 06:20:04, lundi 24 janvier 2011
+Message:
+Fixed PNG exports with OpenGL
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+Modified : /trunk/gpac/src/compositor/visual_manager_3d.c
+Modified : /trunk/gpac/src/compositor/visual_manager_3d_gl.c
+
+Revision: 2613
+Author: jeanlf
+Date: 06:19:17, lundi 24 janvier 2011
+Message:
+Fixed parsing of -size switch
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2612
+Author: jeanlf
+Date: 04:07:43, lundi 24 janvier 2011
+Message:
+Added support for transparent background (-no-back) and PNG dump (-png) in mp4client
+----
+Modified : /trunk/gpac/applications/mp4client/extract.c
+Modified : /trunk/gpac/applications/mp4client/main.c
+Modified : /trunk/gpac/include/gpac/user.h
+Modified : /trunk/gpac/modules/dx_hw/dx_2d.c
+Modified : /trunk/gpac/modules/dx_hw/dx_hw.h
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+Modified : /trunk/gpac/modules/sdl_out/sdl_out.h
+Modified : /trunk/gpac/modules/sdl_out/video.c
+Modified : /trunk/gpac/src/compositor/visual_manager_2d_draw.c
+Modified : /trunk/gpac/src/media_tools/img.c
+
+Revision: 2611
+Author: jeanlf
+Date: 02:03:35, lundi 24 janvier 2011
+Message:
+Update usage info and track layout format
+----
+Modified : /trunk/gpac/applications/mp4box/filedump.c
+Modified : /trunk/gpac/applications/mp4box/fileimport.c
+Modified : /trunk/gpac/applications/mp4box/main.c
+
+Revision: 2610
+Author: bad_sheep
+Date: 16:26:38, vendredi 21 janvier 2011
+Message:
+Fixed behaviour of wget() to work properly with HTTP1.1 servers such as google ones
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2609
+Author: bad_sheep
+Date: 14:26:57, vendredi 21 janvier 2011
+Message:
+Fixed debug message with wrong parameters
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2608
+Author: bad_sheep
+Date: 14:22:02, vendredi 21 janvier 2011
+Message:
+Use gf_dm_del() instead of gf_free()
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2607
+Author: bad_sheep
+Date: 20:28:46, jeudi 20 janvier 2011
+Message:
+Added function to simply download a file
+----
+Modified : /trunk/gpac/include/gpac/download.h
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2606
+Author: enst_devs
+Date: 15:42:22, vendredi 14 janvier 2011
+Message:
+[bouqueau] m2ts mux allocation consistency (packets removed and freed before packetization, data freed after being sent)
+
+----
+Modified : /trunk/gpac/include/gpac/mpegts.h
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2605
+Author: jeanlf
+Date: 16:51:00, jeudi 13 janvier 2011
+Message:
+code cleanup
+----
+Modified : /trunk/gpac/src/utils/os_net.c
+
+Revision: 2604
+Author: jeanlf
+Date: 16:50:44, jeudi 13 janvier 2011
+Message:
+Fixed error code when input service cannot be opened
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2603
+Author: jeanlf
+Date: 13:55:24, jeudi 13 janvier 2011
+Message:
+Removed current PES packet being packetized from PES FIFO before packetization
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2602
+Author: jeanlf
+Date: 15:29:25, mercredi 12 janvier 2011
+Message:
+Added support for LASeR/DIMS updates element
+----
+Modified : /trunk/gpac/applications/mp4box/live.c
+Modified : /trunk/gpac/include/gpac/nodes_svg.h
+Modified : /trunk/gpac/include/gpac/xml.h
+Modified : /trunk/gpac/src/compositor/compositor_node_init.c
+Modified : /trunk/gpac/src/compositor/nodes_stacks.h
+Modified : /trunk/gpac/src/compositor/svg_media.c
+Modified : /trunk/gpac/src/scene_manager/loader_svg.c
+Modified : /trunk/gpac/src/scene_manager/scene_engine.c
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+Modified : /trunk/gpac/src/scenegraph/svg_smjs.c
+Modified : /trunk/gpac/src/scenegraph/svg_types.c
+Modified : /trunk/gpac/src/scenegraph/xml_ns.c
+Modified : /trunk/gpac/src/terminal/channel.c
+Modified : /trunk/gpac/src/terminal/media_object.c
+Modified : /trunk/gpac/src/terminal/network_service.c
+Modified : /trunk/gpac/src/terminal/terminal.c
+Modified : /trunk/gpac/src/utils/xml_parser.c
+
+Revision: 2601
+Author: enst_devs
+Date: 13:33:13, mercredi 12 janvier 2011
+Message:
+[bouqueau] fix m2ts mux algorithm for mpts multiplexes
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2600
+Author: jeanlf
+Date: 18:54:38, mardi 11 janvier 2011
+Message:
+Modified buffering to abort when one of the CB is full
+----
+Modified : /trunk/gpac/include/gpac/internal/terminal_dev.h
+Modified : /trunk/gpac/src/terminal/channel.c
+Modified : /trunk/gpac/src/terminal/clock.c
+Modified : /trunk/gpac/src/terminal/media_memory.c
+
+Revision: 2599
+Author: jeanlf
+Date: 17:01:33, mardi 11 janvier 2011
+Message:
+Added support for libplayer demux/decode
+----
+Added : /trunk/gpac/modules/libplayer
+Added : /trunk/gpac/modules/libplayer/Makefile
+Added : /trunk/gpac/modules/libplayer/libplayer.c
+
+Revision: 2598
+Author: jeanlf
+Date: 16:59:24, mardi 11 janvier 2011
+Message:
+Added support for libplayer demux/decode
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2597
+Author: jeanlf
+Date: 16:58:54, mardi 11 janvier 2011
+Message:
+Added HW caps for stretching
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_2d.c
+Modified : /trunk/gpac/modules/sdl_out/video.c
+
+Revision: 2596
+Author: jeanlf
+Date: 16:58:17, mardi 11 janvier 2011
+Message:
+Added support for libplayer demux/decode
+----
+Modified : /trunk/gpac/include/gpac/color.h
+Modified : /trunk/gpac/include/gpac/constants.h
+Modified : /trunk/gpac/include/gpac/internal/compositor_dev.h
+Modified : /trunk/gpac/include/gpac/mediaobject.h
+Modified : /trunk/gpac/include/gpac/modules/codec.h
+Modified : /trunk/gpac/include/gpac/modules/video_out.h
+Modified : /trunk/gpac/src/compositor/compositor_2d.c
+Modified : /trunk/gpac/src/compositor/texturing.c
+Modified : /trunk/gpac/src/compositor/visual_manager_2d_draw.c
+Modified : /trunk/gpac/src/terminal/decoder.c
+Modified : /trunk/gpac/src/terminal/media_object.c
+
+Revision: 2595
+Author: jeanlf
+Date: 17:03:29, lundi 10 janvier 2011
+Message:
+Added configurable timeout for HTTP HEAD
+----
+Modified : /trunk/gpac/doc/configuration.html
+
+Revision: 2594
+Author: jeanlf
+Date: 17:01:26, lundi 10 janvier 2011
+Message:
+Added configurable timeout for HTTP HEAD (cf doc)
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2593
+Author: jeanlf
+Date: 16:45:47, lundi 10 janvier 2011
+Message:
+Fixed potential crash on script destroy
+----
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+
+Revision: 2592
+Author: jeanlf
+Date: 16:45:19, lundi 10 janvier 2011
+Message:
+Fixed parsing of HTTP replies when badly formatted
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2591
+Author: enst_devs
+Date: 13:42:36, lundi 10 janvier 2011
+Message:
+[bouqueau] remove unused code throwing an assert
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2590
+Author: enst_devs
+Date: 15:46:42, vendredi 7 janvier 2011
+Message:
+[bouqueau] mp42ts: audio timestamps could be reset after an http deconnexion
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2589
+Author: jeanlf
+Date: 10:10:27, vendredi 7 janvier 2011
+Message:
+Fixed potential bug in XHR callback
+----
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+
+Revision: 2588
+Author: jeanlf
+Date: 09:31:56, vendredi 7 janvier 2011
+Message:
+Fixed mp42ts path when configure is not run from source directory
+----
+Modified : /trunk/gpac/configure
+
+Revision: 2587
+Author: jeanlf
+Date: 19:20:27, jeudi 6 janvier 2011
+Message:
+Fixed MSVC compilation
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2586
+Author: jeanlf
+Date: 19:19:44, jeudi 6 janvier 2011
+Message:
+Fixed BGR32 rasterizer
+----
+Modified : /trunk/gpac/modules/soft_raster/raster_argb.c
+
+Revision: 2585
+Author: jeanlf
+Date: 11:55:59, jeudi 6 janvier 2011
+Message:
+Fixed OSX version (iOS was enabled by default)
+----
+Modified : /trunk/gpac/modules/sdl_out/audio.c
+Modified : /trunk/gpac/modules/sdl_out/video.c
+
+Revision: 2584
+Author: enst_devs
+Date: 17:49:29, mercredi 5 janvier 2011
+Message:
+[bouqueau] multicast TTL was set to 0
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2583
+Author: bad_sheep
+Date: 17:03:33, mercredi 5 janvier 2011
+Message:
+Forgot to send packet with PCR
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2582
+Author: enst_devs
+Date: 10:49:54, mercredi 5 janvier 2011
+Message:
+[bouqueau] more robustness against invalid avc nal units
+----
+Modified : /trunk/gpac/src/media_tools/media_import.c
+
+Revision: 2581
+Author: bad_sheep
+Date: 17:04:01, mardi 4 janvier 2011
+Message:
+fread would not have been performed in release mode
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2580
+Author: bad_sheep
+Date: 14:55:45, mardi 4 janvier 2011
+Message:
+Fixed warning about uninitialized value
+----
+Modified : /trunk/gpac/modules/widgetman/unzip.c
+
+Revision: 2579
+Author: bad_sheep
+Date: 14:54:19, mardi 4 janvier 2011
+Message:
+Fixed warning about uninitialized value
+----
+Modified : /trunk/gpac/modules/widgetman/unzip.c
+
+Revision: 2578
+Author: bad_sheep
+Date: 14:50:49, mardi 4 janvier 2011
+Message:
+fixed compilation warning about uninitialized value
+----
+Modified : /trunk/gpac/modules/dummy_in/dummy_in.c
+
+Revision: 2577
+Author: bad_sheep
+Date: 14:46:22, mardi 4 janvier 2011
+Message:
+be sure to init video_buffer_size to avoid compilation warnings
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2576
+Author: bad_sheep
+Date: 14:43:19, mardi 4 janvier 2011
+Message:
+Added assert on fread, avoids compilation warnings an possible error if file is modified after the ftell()
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2575
+Author: bad_sheep
+Date: 14:33:48, mardi 4 janvier 2011
+Message:
+Fixed possible not initialized string
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2574
+Author: enst_devs
+Date: 11:27:47, mardi 4 janvier 2011
+Message:
+[bouqueau] use prefered GPAC APIs
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+Modified : /trunk/gpac/modules/img_in/img_in.c
+Modified : /trunk/gpac/modules/mp3_in/mp3_in.c
+Modified : /trunk/gpac/modules/mpd_in/m3u8.c
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/modules/platinum/GPACPlatinum.cpp
+Modified : /trunk/gpac/modules/rtp_in/sdp_fetch.c
+Modified : /trunk/gpac/modules/sdl_out/video.c
+Modified : /trunk/gpac/modules/ui_rec/ui_rec.c
+Modified : /trunk/gpac/src/media_tools/img.c
+Modified : /trunk/gpac/src/media_tools/isom_tools.c
+Modified : /trunk/gpac/src/utils/cache.c
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2573
+Author: bad_sheep
+Date: 22:51:46, lundi 3 janvier 2011
+Message:
+Partial fix, now should work with any audio config
+----
+Modified : /trunk/gpac/modules/redirect_av/ffmpeg_ts_muxer.c
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Modified : /trunk/gpac/modules/redirect_av/ts_muxer.h
+
+Revision: 2572
+Author: bad_sheep
+Date: 17:13:21, lundi 3 janvier 2011
+Message:
+Check if null before calling thread_detach(), fixed compilation warning
+----
+Modified : /trunk/gpac/src/utils/os_thread.c
+
+Revision: 2571
+Author: bad_sheep
+Date: 17:11:44, lundi 3 janvier 2011
+Message:
+Check if null before calling thread_detach()
+----
+Modified : /trunk/gpac/src/utils/os_thread.c
+
+Revision: 2570
+Author: enst_devs
+Date: 15:39:00, lundi 3 janvier 2011
+Message:
+[bouqueau] temporarily remove experimental av_redirect module as some ffmpeg version fails to compile
+----
+Modified : /trunk/gpac/modules/Makefile
+
+Revision: 2569
+Author: enst_devs
+Date: 15:35:12, lundi 3 janvier 2011
+Message:
+[bouqueau] misc build
+----
+Modified : /trunk/gpac/build/msvc8/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/libgpac.vcproj
+Modified : /trunk/gpac/build/msvc9/redirect_av.vcproj
+Modified : /trunk/gpac/include/gpac/ringbuffer.h
+Modified : /trunk/gpac/modules/redirect_av/ffmpeg_ts_muxer.c
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Modified : /trunk/gpac/src/export.cpp
+Modified : /trunk/gpac/src/utils/os_divers.c
+Modified : /trunk/gpac/src/utils/ringbuffer.c
+
+Revision: 2568
+Author: bad_sheep
+Date: 09:09:31, lundi 3 janvier 2011
+Message:
+Fixed wrong header
+----
+Modified : /trunk/gpac/include/gpac/ringbuffer.h
+
+Revision: 2567
+Author: bad_sheep
+Date: 19:16:13, jeudi 30 décembre 2010
+Message:
+Almost work on UNIX, still some issues with DTS, have to find a nice way to do it with ffmpeg
+----
+Added : /trunk/gpac/modules/redirect_av/ffmpeg_ts_muxer.c
+Added : /trunk/gpac/modules/redirect_av/gpac_ts_muxer.c
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Added : /trunk/gpac/modules/redirect_av/ts_muxer.h
+
+Revision: 2566
+Author: bad_sheep
+Date: 19:15:05, jeudi 30 décembre 2010
+Message:
+Added ringbuffer implementation + added function to lock a global resource (not implemented under Win32 yet)
+----
+Added : /trunk/gpac/include/gpac/ringbuffer.h
+Modified : /trunk/gpac/include/gpac/tools.h
+Modified : /trunk/gpac/src/Makefile
+Modified : /trunk/gpac/src/utils/os_divers.c
+Added : /trunk/gpac/src/utils/ringbuffer.c
+
+Revision: 2565
+Author: bad_sheep
+Date: 14:49:04, lundi 27 décembre 2010
+Message:
+Removed unecessary check (always true)
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2564
+Author: bad_sheep
+Date: 14:36:50, lundi 27 décembre 2010
+Message:
+We now initialize SSL only if needed, this avoid to spoil a few kilobytes of memory. Also avoid to init SSL two times if several download managers are used
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2563
+Author: bad_sheep
+Date: 14:30:43, lundi 27 décembre 2010
+Message:
+We did not freed nicely the threads, avoid to leak 160 bytes for every thread
+----
+Modified : /trunk/gpac/src/utils/os_thread.c
+
+Revision: 2562
+Author: enst_devs
+Date: 09:20:21, jeudi 23 décembre 2010
+Message:
+[bouqueau] m2ts schedule policy: send pcr stream first (2 reasons: 1. we could never send the pcr ; 2. pcr is often carried by audio which need to be sent regularly)
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2561
+Author: enst_devs
+Date: 09:04:21, jeudi 23 décembre 2010
+Message:
+[bouqueau] add video support for mp42ts
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+
+Revision: 2560
+Author: enst_devs
+Date: 08:45:22, jeudi 23 décembre 2010
+Message:
+[bouqueau] avoid PES never being sent + minor fix on err msg
+----
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2559
+Author: bad_sheep
+Date: 10:45:17, mercredi 22 décembre 2010
+Message:
+Now adds default options when nothing is specified. Use by default 24 bits for RGB depth instead of 15
+----
+Modified : /trunk/gpac/modules/x11_out/x11_out.c
+
+Revision: 2558
+Author: bad_sheep
+Date: 09:34:05, mercredi 22 décembre 2010
+Message:
+Since we don't support remote playlist, remove support for http URL in playlists, some work fine with m3u8 MPD support
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2557
+Author: bad_sheep
+Date: 15:18:47, mardi 21 décembre 2010
+Message:
+Added audio support
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2556
+Author: bad_sheep
+Date: 14:41:09, mardi 21 décembre 2010
+Message:
+Now also send audio
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2555
+Author: bad_sheep
+Date: 11:19:37, mardi 21 décembre 2010
+Message:
+Added error messages when symbols are not found in modules + fixed possible deadlocks with add/remove_audio/video_listeners
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Modified : /trunk/gpac/src/utils/os_module.c
+
+Revision: 2554
+Author: bad_sheep
+Date: 19:45:08, lundi 20 décembre 2010
+Message:
+Fixed error while parsing port + fixed deadloack with compositor
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2553
+Author: jeanlf
+Date: 17:23:49, lundi 20 décembre 2010
+Message:
+Fixed script names
+----
+Modified : /trunk/gpac/gui/gui.bt
+Modified : /trunk/gpac/gui/gui.js
+Modified : /trunk/gpac/gui/gui_old.bt
+
+Revision: 2552
+Author: jeanlf
+Date: 17:23:23, lundi 20 décembre 2010
+Message:
+Fixed loadScript return value
+----
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2551
+Author: jeanlf
+Date: 16:42:35, lundi 20 décembre 2010
+Message:
+Commit of new GUI for GPAC - widget manager UI is now in extensions/widget_manager
+----
+Added : /trunk/gpac/gui/extensions
+Added : /trunk/gpac/gui/extensions/widget_manager
+Added : /trunk/gpac/gui/extensions/widget_manager/applications-system.svg
+Added : /trunk/gpac/gui/extensions/widget_manager/init.js
+
+Revision: 2550
+Author: jeanlf
+Date: 16:41:51, lundi 20 décembre 2010
+Message:
+Commit of new GUI for GPAC
+----
+Added : /trunk/gpac/gui/icons/edit-find.svg
+Added : /trunk/gpac/gui/icons/emblem-symbolic-link.svg
+Added : /trunk/gpac/gui/icons/folder-open.svg
+Added : /trunk/gpac/gui/icons/preferences-desktop-remote-desktop.svg
+Added : /trunk/gpac/gui/icons/preferences-system-windows.svg
+
+Revision: 2549
+Author: jeanlf
+Date: 16:40:56, lundi 20 décembre 2010
+Message:
+Commit of new GUI for GPAC - widget manager UI is now in extensions/widget_manager
+----
+Added : /trunk/gpac/gui/gui.bt
+Added : /trunk/gpac/gui/gui.js
+Added : /trunk/gpac/gui/gwlib.js
+
+Revision: 2548
+Author: jeanlf
+Date: 16:39:36, lundi 20 décembre 2010
+Message:
+Moved old GUI to gui_old
+----
+Deleted : /trunk/gpac/gui/gui.bt
+Deleted : /trunk/gpac/gui/gui.js
+
+Revision: 2547
+Author: jeanlf
+Date: 16:36:49, lundi 20 décembre 2010
+Message:
+Moved old GUI to gui_old
+----
+Added : /trunk/gpac/gui/gui_old.bt (Copy from path: /trunk/gpac/gui/gui.bt, Revision, 2544)
+Added : /trunk/gpac/gui/gui_old.js (Copy from path: /trunk/gpac/gui/gui.js, Revision, 2544)
+
+Revision: 2546
+Author: jeanlf
+Date: 16:33:00, lundi 20 décembre 2010
+Message:
+Fixed compilation for JS API when JS_THREADSAFE is not defined
+----
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2545
+Author: jeanlf
+Date: 16:27:27, lundi 20 décembre 2010
+Message:
+Fixed win32 release build
+----
+Modified : /trunk/gpac/build/msvc8/mpd_in.vcproj
+
+Revision: 2544
+Author: jeanlf
+Date: 16:19:19, lundi 20 décembre 2010
+Message:
+Fixed gcc compilation
+
+----
+Modified : /trunk/gpac/include/gpac/internal/scenegraph_dev.h
+
+Revision: 2543
+Author: jeanlf
+Date: 16:15:51, lundi 20 décembre 2010
+Message:
+Updated to latest GPAC object interface
+----
+Modified : /trunk/gpac/gui/gui.js
+
+Revision: 2542
+Author: jeanlf
+Date: 16:15:13, lundi 20 décembre 2010
+Message:
+Fixed support for latest SpiderMonkey compiled with JS_THREADSAFE
+
+----
+Modified : /trunk/gpac/include/gpac/internal/scenegraph_dev.h
+
+Revision: 2541
+Author: jeanlf
+Date: 16:12:14, lundi 20 décembre 2010
+Message:
+Fixed support for latest SpiderMonkey compiled with JS_THREADSAFE
+----
+Modified : /trunk/gpac/src/scenegraph/svg_smjs.c
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2540
+Author: bad_sheep
+Date: 13:42:09, lundi 20 décembre 2010
+Message:
+Fixed compilation when Javascript is not present
+----
+Modified : /trunk/gpac/include/gpac/internal/scenegraph_dev.h
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2539
+Author: jeanlf
+Date: 11:26:08, lundi 20 décembre 2010
+Message:
+Added JS context in lock request for new SpiderMonkey APIs
+----
+Modified : /trunk/gpac/include/gpac/internal/scenegraph_dev.h
+Modified : /trunk/gpac/modules/gpac_js/gpac_js.c
+Modified : /trunk/gpac/modules/platinum/GPACPlatinum.cpp
+Modified : /trunk/gpac/modules/widgetman/widgetman.c
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+Modified : /trunk/gpac/src/scenegraph/svg_smjs.c
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2538
+Author: bad_sheep
+Date: 13:47:18, vendredi 17 décembre 2010
+Message:
+Fixed redirect_av to avoid crashes
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2537
+Author: jeanlf
+Date: 13:17:15, vendredi 17 décembre 2010
+Message:
+Fixed compilation under OSX
+----
+Modified : /trunk/gpac/include/gpac/setup.h
+
+Revision: 2536
+Author: bad_sheep
+Date: 17:49:32, jeudi 16 décembre 2010
+Message:
+Fixed assert crash when stopping cleanly GPAC on mu38 file when cache has only one file
+----
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+
+Revision: 2535
+Author: bad_sheep
+Date: 17:29:38, jeudi 16 décembre 2010
+Message:
+Fixed memory leak with track names / stream names...
+----
+Modified : /trunk/gpac/modules/mp3_in/mp3_in.c
+
+Revision: 2534
+Author: bad_sheep
+Date: 17:14:59, jeudi 16 décembre 2010
+Message:
+Fix incorrect use of const for decrypt, so changed a lot of const char * into char *
+----
+Modified : /trunk/gpac/include/gpac/crypt.h
+Modified : /trunk/gpac/include/gpac/internal/terminal_dev.h
+Modified : /trunk/gpac/include/gpac/modules/ipmp.h
+Modified : /trunk/gpac/include/gpac/modules/service.h
+Modified : /trunk/gpac/modules/mp3_in/mp3_in.c
+Modified : /trunk/gpac/src/mcrypt/g_crypt.c
+Modified : /trunk/gpac/src/terminal/channel.c
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2533
+Author: bad_sheep
+Date: 14:40:49, jeudi 16 décembre 2010
+Message:
+Now basicaly works
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2532
+Author: jeanlf
+Date: 14:25:34, jeudi 16 décembre 2010
+Message:
+Added MPD_IN project settings for WinCE
+----
+Modified : /trunk/gpac/build/msvc8/gpac.sln
+Modified : /trunk/gpac/build/msvc8/mpd_in.vcproj
+Modified : /trunk/gpac/include/gpac/setup.h
+Modified : /trunk/gpac/modules/mpd_in/m3u8.c
+
+Revision: 2531
+Author: bad_sheep
+Date: 14:24:02, jeudi 16 décembre 2010
+Message:
+Put some const char * when possible ; now configurable UDP output for AVRedirect
+----
+Modified : /trunk/gpac/include/gpac/crypt.h
+Modified : /trunk/gpac/include/gpac/network.h
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Modified : /trunk/gpac/src/mcrypt/g_crypt.c
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+Modified : /trunk/gpac/src/utils/os_net.c
+
+Revision: 2530
+Author: jeanlf
+Date: 14:04:59, jeudi 16 décembre 2010
+Message:
+FFixed compilation under WinCE
+----
+Modified : /trunk/gpac/build/msvc8/redirect_av.vcproj
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2529
+Author: jeanlf
+Date: 13:51:12, jeudi 16 décembre 2010
+Message:
+Changed threading flags and added -gui and -guid modes
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2528
+Author: jeanlf
+Date: 13:50:16, jeudi 16 décembre 2010
+Message:
+Fixed some compilation issues under MSVC
+----
+Modified : /trunk/gpac/build/msvc8/aac_in.vcproj
+Modified : /trunk/gpac/build/msvc8/ac3_in.vcproj
+Modified : /trunk/gpac/build/msvc8/mp4box.vcproj
+Modified : /trunk/gpac/build/msvc8/redirect_av.vcproj
+
+Revision: 2527
+Author: jeanlf
+Date: 13:49:43, jeudi 16 décembre 2010
+Message:
+Added new properties and functions
+----
+Modified : /trunk/gpac/modules/gpac_js/gpac_js.c
+
+Revision: 2526
+Author: jeanlf
+Date: 13:49:11, jeudi 16 décembre 2010
+Message:
+Mapped HSCROLL event to horizontal mousewheel
+----
+Modified : /trunk/gpac/modules/dx_hw/dx_window.c
+
+Revision: 2525
+Author: jeanlf
+Date: 13:48:43, jeudi 16 décembre 2010
+Message:
+Added new user flags for threading
+----
+Modified : /trunk/gpac/include/gpac/user.h
+
+Revision: 2524
+Author: jeanlf
+Date: 13:47:47, jeudi 16 décembre 2010
+Message:
+Added missing exports
+----
+Modified : /trunk/gpac/src/export.cpp
+
+Revision: 2523
+Author: jeanlf
+Date: 13:46:33, jeudi 16 décembre 2010
+Message:
+Many fixes in compositor (event handling, backround binding, text, ..)
+----
+Modified : /trunk/gpac/include/gpac/internal/compositor_dev.h
+Modified : /trunk/gpac/src/compositor/compositor.c
+Modified : /trunk/gpac/src/compositor/compositor_3d.c
+Modified : /trunk/gpac/src/compositor/drawable.c
+Modified : /trunk/gpac/src/compositor/events.c
+Modified : /trunk/gpac/src/compositor/font_engine.c
+Modified : /trunk/gpac/src/compositor/mpeg4_background2d.c
+Modified : /trunk/gpac/src/compositor/mpeg4_grouping.c
+Modified : /trunk/gpac/src/compositor/mpeg4_grouping.h
+Modified : /trunk/gpac/src/compositor/mpeg4_grouping_2d.c
+Modified : /trunk/gpac/src/compositor/mpeg4_layout.c
+Modified : /trunk/gpac/src/compositor/mpeg4_sensors.c
+Modified : /trunk/gpac/src/compositor/mpeg4_text.c
+Modified : /trunk/gpac/src/compositor/navigate.c
+Modified : /trunk/gpac/src/compositor/svg_grouping.c
+Modified : /trunk/gpac/src/compositor/texturing.c
+Modified : /trunk/gpac/src/compositor/visual_manager_2d.c
+
+Revision: 2522
+Author: jeanlf
+Date: 13:45:03, jeudi 16 décembre 2010
+Message:
+Fixed crash in GC
+----
+Modified : /trunk/gpac/src/scenegraph/vrml_smjs.c
+
+Revision: 2521
+Author: jeanlf
+Date: 13:44:31, jeudi 16 décembre 2010
+Message:
+fixed compilation warning
+----
+Modified : /trunk/gpac/modules/widgetman/wgt_load.c
+
+Revision: 2520
+Author: jeanlf
+Date: 13:44:07, jeudi 16 décembre 2010
+Message:
+Fixed error handling when file loading fails
+----
+Modified : /trunk/gpac/modules/isom_in/read.c
+
+Revision: 2519
+Author: jeanlf
+Date: 13:43:37, jeudi 16 décembre 2010
+Message:
+Added error code to DOM Event for connection events
+----
+Modified : /trunk/gpac/include/gpac/scenegraph_svg.h
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+
+Revision: 2518
+Author: jeanlf
+Date: 13:42:51, jeudi 16 décembre 2010
+Message:
+Made scene disconnection/destruction an async task
+----
+Modified : /trunk/gpac/modules/ctx_load/ctx_load.c
+
+Revision: 2517
+Author: jeanlf
+Date: 13:42:30, jeudi 16 décembre 2010
+Message:
+Made scene disconnection/destruction an async task and added notification events upon connection failure
+----
+Modified : /trunk/gpac/include/gpac/internal/terminal_dev.h
+Modified : /trunk/gpac/src/terminal/decoder.c
+Modified : /trunk/gpac/src/terminal/mpeg4_inline.c
+Modified : /trunk/gpac/src/terminal/object_manager.c
+Modified : /trunk/gpac/src/terminal/scene.c
+Modified : /trunk/gpac/src/terminal/terminal.c
+
+Revision: 2516
+Author: jeanlf
+Date: 13:38:48, jeudi 16 décembre 2010
+Message:
+Added notification event for scene attachment
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2515
+Author: jeanlf
+Date: 13:37:24, jeudi 16 décembre 2010
+Message:
+Fixed win32 compilation
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2514
+Author: jeanlf
+Date: 13:37:02, jeudi 16 décembre 2010
+Message:
+Reverted const char * to char * as decyphering is done inplace
+----
+Modified : /trunk/gpac/include/gpac/crypt.h
+Modified : /trunk/gpac/include/gpac/internal/crypt_dev.h
+Modified : /trunk/gpac/src/mcrypt/g_crypt.c
+
+Revision: 2513
+Author: bad_sheep
+Date: 12:29:00, jeudi 16 décembre 2010
+Message:
+Don't update the title of a song if name = '' (on some shoutcast servers
+----
+Modified : /trunk/gpac/modules/mp3_in/mp3_in.c
+
+Revision: 2512
+Author: bad_sheep
+Date: 12:20:13, jeudi 16 décembre 2010
+Message:
+Don't update the title of a song if name = '' (on some shoutcast servers
+----
+Modified : /trunk/gpac/modules/aac_in/aac_in.c
+
+Revision: 2511
+Author: bad_sheep
+Date: 12:10:58, jeudi 16 décembre 2010
+Message:
+Fixed input_udta
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2510
+Author: bad_sheep
+Date: 11:58:45, jeudi 16 décembre 2010
+Message:
+Fixed input_udta
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2509
+Author: jeanlf
+Date: 11:04:40, jeudi 16 décembre 2010
+Message:
+Fixed crash when dumping corrupted AVC/H264 tracks
+----
+Modified : /trunk/gpac/src/media_tools/media_export.c
+
+Revision: 2508
+Author: bad_sheep
+Date: 11:00:19, jeudi 16 décembre 2010
+Message:
+Stuck with MPEG-TS mux
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2507
+Author: enst_devs
+Date: 10:07:01, jeudi 16 décembre 2010
+Message:
+[bouqueau] minor double deletion
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+
+Revision: 2506
+Author: bad_sheep
+Date: 09:59:23, jeudi 16 décembre 2010
+Message:
+Fixed compilation warnings
+----
+Modified : /trunk/gpac/applications/osmo4_wx/wxOsmo4.cpp
+
+Revision: 2505
+Author: bad_sheep
+Date: 00:02:00, jeudi 16 décembre 2010
+Message:
+Fixed configure script and Makefile for Mac OS X
+----
+Modified : /trunk/gpac/configure
+Modified : /trunk/gpac/modules/redirect_av/Makefile
+
+Revision: 2504
+Author: bad_sheep
+Date: 23:16:55, mercredi 15 décembre 2010
+Message:
+Fixed problems with compilation when not activating threads / added assert in TS muxer
+----
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+Modified : /trunk/gpac/src/media_tools/m2ts_mux.c
+
+Revision: 2503
+Author: bad_sheep
+Date: 20:23:30, mercredi 15 décembre 2010
+Message:
+Shuts down nicely when connection is broken
+----
+Modified : /trunk/gpac/modules/mpd_in/mpd_in.c
+Modified : /trunk/gpac/modules/mpegts_in/mpegts_in.c
+Modified : /trunk/gpac/modules/redirect_av/Makefile
+Modified : /trunk/gpac/modules/redirect_av/redirect_av.c
+
+Revision: 2502
+Author: bad_sheep
+Date: 20:16:33, mercredi 15 décembre 2010
+Message:
+used #ifdef UNUSED_FUNC for unused function
+----
+Modified : /trunk/gpac/modules/sdl_out/video.c
+
+Revision: 2501
+Author: bad_sheep
+Date: 19:57:04, mercredi 15 décembre 2010
+Message:
+Added ignore list for Win32 builds / added some const char * instead of char * for compilation warnings
+----
+Modified : /trunk/gpac/bin
+Modified : /trunk/gpac/bin/w32_rel
+Modified : /trunk/gpac/build/msvc9
+Modified : /trunk/gpac/include/gpac/internal/crypt_dev.h
+Modified : /trunk/gpac/src/scenegraph/dom_smjs.c
+
+Revision: 2500
+Author: enst_devs
+Date: 18:24:35, mercredi 15 décembre 2010
+Message:
+[bouqueau] fix mp42ts leaks
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+Modified : /trunk/gpac/src/utils/alloc.c
+
+Revision: 2499
+Author: enst_devs
+Date: 18:06:54, mercredi 15 décembre 2010
+Message:
+[bouqueau] mp42ts: if http streaming connection for audio is broken, set a new one as soon as possible
+----
+Modified : /trunk/gpac/applications/mp42ts/main.c
+Modified : /trunk/gpac/include/gpac/download.h
+Modified : /trunk/gpac/src/export.cpp
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2498
+Author: bad_sheep
+Date: 17:45:41, mercredi 15 décembre 2010
+Message:
+Fixed compilation for old ffmpeg libraries
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2497
+Author: bad_sheep
+Date: 17:40:51, mercredi 15 décembre 2010
+Message:
+Fixed compilation for old ffmpeg libraries
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2496
+Author: bad_sheep
+Date: 17:34:42, mercredi 15 décembre 2010
+Message:
+Fixed compilation for old ffmpeg libraries
+----
+Modified : /trunk/gpac/modules/ffmpeg_in/ffmpeg_decode.c
+
+Revision: 2495
+Author: bad_sheep
+Date: 17:22:41, mercredi 15 décembre 2010
+Message:
+changed buffer empty to debug instead of warning since it is a normal message
+----
+Modified : /trunk/gpac/src/compositor/audio_mixer.c
+
+Revision: 2494
+Author: enst_devs
+Date: 16:43:42, mercredi 15 décembre 2010
+Message:
+[bouqueau] GPAC for iOS
+----
+Added : /trunk/gpac/applications/osmo4_ios
+Added : /trunk/gpac/applications/osmo4_ios/extract.c
+Added : /trunk/gpac/applications/osmo4_ios/main.c
+Added : /trunk/gpac/build/xcode/README_IOS.txt
+Added : /trunk/gpac/build/xcode/empty.c
+Added : /trunk/gpac/build/xcode/gpac4ios.xcodeproj
+Added : /trunk/gpac/build/xcode/gpac4ios.xcodeproj/project.pbxproj
+Added : /trunk/gpac/build/xcode/libgpac_symbols.h
+Added : /trunk/gpac/build/xcode/module_av_generic.c
+Added : /trunk/gpac/build/xcode/module_av_sdl.c
+Added : /trunk/gpac/build/xcode/script_libgpac.sh
+Added : /trunk/gpac/build/xcode/script_modules.sh
+Modified : /trunk/gpac/include/gpac/configuration.h
+Modified : /trunk/gpac/include/gpac/setup.h
+Modified : /trunk/gpac/modules/sdl_out/audio.c
+Modified : /trunk/gpac/modules/sdl_out/video.c
+Modified : /trunk/gpac/src/utils/module.c
+Modified : /trunk/gpac/src/utils/os_module.c
+
+Revision: 2493
+Author: bad_sheep
+Date: 15:19:43, mercredi 15 décembre 2010
+Message:
+Removed debug msg
+----
+Modified : /trunk/gpac/applications/mp4client/main.c
+
+Revision: 2492
+Author: bad_sheep
+Date: 15:09:32, mercredi 15 décembre 2010
+Message:
+Fix all compilation GCC warnings and fix some memory leaks and use const char * instead of const char when appropriate
+----
+Modified : /trunk/gpac/include/gpac/avparse.h
+Modified : /trunk/gpac/include/gpac/bifs.h
+Modified : /trunk/gpac/include/gpac/crypt.h
+Modified : /trunk/gpac/include/gpac/download.h
+Modified : /trunk/gpac/include/gpac/internal/terminal_dev.h
+Modified : /trunk/gpac/include/gpac/laser.h
+Modified : /trunk/gpac/include/gpac/modules/codec.h
+Modified : /trunk/gpac/include/gpac/modules/ipmp.h
+Modified : /trunk/gpac/include/gpac/mpegts.h
+Modified : /trunk/gpac/include/gpac/scene_manager.h
+Modified : /trunk/gpac/include/gpac/sync_layer.h
+Modified : /trunk/gpac/include/gpac/xml.h
+Modified : /trunk/gpac/modules/aac_in/aac_in.c
+Modified : /trunk/gpac/modules/ac3_in/ac3_in.c
+Modified : /trunk/gpac/modules/bifs_dec/bifs_dec.c
+Modified : /trunk/gpac/modules/ctx_load/ctx_load.c
+Modified : /trunk/gpac/modules/laser_dec/laser_dec.c
+Modified : /trunk/gpac/modules/mp3_in/mp3_in.c
+Modified : /trunk/gpac/modules/odf_dec/odf_dec.c
+Modified : /trunk/gpac/modules/svg_in/svg_in.c
+Modified : /trunk/gpac/modules/timedtext/timedtext_dec.c
+Modified : /trunk/gpac/src/bifs/bifs_codec.c
+Modified : /trunk/gpac/src/bifs/com_dec.c
+Modified : /trunk/gpac/src/compositor/audio_render.c
+Modified : /trunk/gpac/src/compositor/compositor.c
+Modified : /trunk/gpac/src/compositor/svg_base.c
+Modified : /trunk/gpac/src/compositor/svg_filters.c
+Modified : /trunk/gpac/src/laser/lsr_dec.c
+Modified : /trunk/gpac/src/laser/lsr_enc.c
+Modified : /trunk/gpac/src/mcrypt/g_crypt.c
+Modified : /trunk/gpac/src/media_tools/av_parsers.c
+Modified : /trunk/gpac/src/media_tools/dvb_mpe.c
+Modified : /trunk/gpac/src/odf/slc.c
+Modified : /trunk/gpac/src/scene_manager/loader_bt.c
+Modified : /trunk/gpac/src/scene_manager/loader_svg.c
+Modified : /trunk/gpac/src/scene_manager/loader_xmt.c
+Modified : /trunk/gpac/src/scene_manager/scene_dump.c
+Modified : /trunk/gpac/src/scene_manager/scene_manager.c
+Modified : /trunk/gpac/src/scenegraph/base_scenegraph.c
+Modified : /trunk/gpac/src/scenegraph/xbl_process.c
+Modified : /trunk/gpac/src/terminal/channel.c
+Modified : /trunk/gpac/src/terminal/input_sensor.c
+Modified : /trunk/gpac/src/terminal/mpeg4_inline.c
+Modified : /trunk/gpac/src/terminal/object_manager.c
+Modified : /trunk/gpac/src/utils/xml_parser.c
+
+Revision: 2491
+Author: enst_devs
+Date: 14:50:21, mercredi 15 décembre 2010
+Message:
+[bouqueau] fix msvc9 idiosyncrasy (double click on the icon does nothing)
+----
+Modified : /trunk/gpac/build/msvc9/gpac.sln
+
+Revision: 2490
+Author: bad_sheep
+Date: 12:26:38, mercredi 15 décembre 2010
+Message:
+Use const whenever possible
+----
+Modified : /trunk/gpac/include/gpac/modules/service.h
+
+Revision: 2489
+Author: bad_sheep
+Date: 12:23:46, mercredi 15 décembre 2010
+Message:
+Fixed memory leak in some circonstances when retrieving mime-type
+----
+Modified : /trunk/gpac/src/terminal/network_service.c
+
+Revision: 2488
+Author: bad_sheep
+Date: 12:00:20, mercredi 15 décembre 2010
+Message:
+Fixed memory leak
+----
+Modified : /trunk/gpac/src/utils/downloader.c
+
+Revision: 2487
+Author: bad_sheep
+Date: 11:57:53, mercredi 15 décembre 2010
+Message:
+Fixed memory leak + format code
+----
+Modified : /trunk/gpac/modules/pulseaudio/pulseaudio.c
+
+Revision: 2486
+Author: enst_devs
+Date: 09:52:25, mercredi 15 décembre 2010
+Message:
+[bouqueau] revert r2483
+----
+Modified : /trunk/gpac/applications/mp4box/live.c
+
+Revision: 2485
+Author: bad_sheep
+Date: 16:25:33, mardi 14 décembre 2010
+Message:
+Use const where possible
+----
+Modified : /trunk/gpac/include/gpac/bitstream.h
+Modified : /trunk/gpac/src/utils/bitstream.c
+----

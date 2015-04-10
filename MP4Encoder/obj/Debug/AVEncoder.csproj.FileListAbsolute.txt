@@ -1,0 +1,8 @@
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Debug\AVEncoder.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Debug\AVEncoder.pdb
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Debug\AVEncoder.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Debug\AVEncoder.pdb
+E:\MyProjects\AVEncoder\AVConverter\bin\Debug\AVEncoder.dll
+E:\MyProjects\AVEncoder\AVConverter\bin\Debug\AVEncoder.pdb
+E:\MyProjects\AVEncoder\AVConverter\obj\Debug\AVEncoder.dll
+E:\MyProjects\AVEncoder\AVConverter\obj\Debug\AVEncoder.pdb

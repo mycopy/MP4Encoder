@@ -1,0 +1,8 @@
+E:\MyProjects\AVEncoder\AVConverter\bin\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\AVConverter\bin\Debug\MP4Encoder.pdb
+E:\MyProjects\AVEncoder\AVConverter\obj\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\AVConverter\obj\Debug\MP4Encoder.pdb
+E:\MyProjects\AVEncoder\MP4Encoder\bin\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\MP4Encoder\bin\Debug\MP4Encoder.pdb
+E:\MyProjects\AVEncoder\MP4Encoder\obj\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\MP4Encoder\obj\Debug\MP4Encoder.pdb

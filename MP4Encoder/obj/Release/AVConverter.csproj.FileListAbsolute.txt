@@ -1,0 +1,5 @@
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Release\AVConverter.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\bin\Release\AVConverter.pdb
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Release\AVConverter.csprojResolveAssemblyReference.cache
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Release\AVConverter.dll
+E:\Mals\VideoConvertAgent\VideoConvertAgent\AVConverter\obj\Release\AVConverter.pdb

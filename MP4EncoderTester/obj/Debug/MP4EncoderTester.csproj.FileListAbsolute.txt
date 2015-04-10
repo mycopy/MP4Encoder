@@ -1,0 +1,16 @@
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\MP4EncoderTester.exe.config
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\MP4EncoderTester.exe
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\MP4EncoderTester.pdb
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\AVEncoderTester\bin\Debug\MP4Encoder.pdb
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\MP4EncoderTester.csprojResolveAssemblyReference.cache
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\MP4EncoderTester.exe
+E:\MyProjects\AVEncoder\AVEncoderTester\obj\Debug\MP4EncoderTester.pdb
+E:\MyProjects\AVEncoder\MP4EncoderTester\bin\Debug\MP4EncoderTester.exe.config
+E:\MyProjects\AVEncoder\MP4EncoderTester\bin\Debug\MP4EncoderTester.exe
+E:\MyProjects\AVEncoder\MP4EncoderTester\bin\Debug\MP4EncoderTester.pdb
+E:\MyProjects\AVEncoder\MP4EncoderTester\bin\Debug\MP4Encoder.dll
+E:\MyProjects\AVEncoder\MP4EncoderTester\bin\Debug\MP4Encoder.pdb
+E:\MyProjects\AVEncoder\MP4EncoderTester\obj\Debug\MP4EncoderTester.csprojResolveAssemblyReference.cache
+E:\MyProjects\AVEncoder\MP4EncoderTester\obj\Debug\MP4EncoderTester.exe
+E:\MyProjects\AVEncoder\MP4EncoderTester\obj\Debug\MP4EncoderTester.pdb
